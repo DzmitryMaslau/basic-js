@@ -27,7 +27,7 @@ const chainMaker = {
     return this
   },
   finishChain() {
-    const finish =this.arr.map(el => '( ' + el +' )');
+    const finish = this.arr.map(el => '( ' + el +' )');
     const result = finish.join('~~');
     this.arr = [];
     return result;
