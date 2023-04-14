@@ -5,33 +5,43 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 const chainMaker = {
-arr = [],
+  arr: [],
+
   getLength() {
     return this.arr.length;
   },
+
   addLink(value) {
-    if (value === undefined){
-      this.arr.push('');
-      } else this.arr.push(value);
-    return this
-  },
-  removeLink(position) {
-    if (typeof position !== 'number' || position < 0 || position > this.getLength){
-      this.arr = [];
-      throw Error;
+    if (typeof value == 'function') {
+      value = new String(value).toString().replace(/ +/, '');
+      this.arr.push(value);
+    } else {
+      this.arr.push(value);
     }
-    this.arr.splice(position - 1, 1);
-    return this
+      return this;
   },
+
+  removeLink(position) {
+     if (typeof position === 'number' && position < this.arr.length && position > 0) {
+       this.arr.splice(position-1, 1);
+       return this;
+     }
+       else {
+         this.arr = [];
+         throw new Error('Error');
+     }
+  },
+
   reverseChain() {
     this.arr.reverse();
-    return this
+    return this;
   },
+
   finishChain() {
-    const finish = this.arr.map(el => '( ' + el +' )');
-    const result = finish.join('~~');
+    let newStr = this.arr.reduce((str, item) => str +'( ' + new String(item).toString() + ' )~~', '');
+    console.log(newStr.substring(0, newStr.length - 2));
     this.arr = [];
-    return result;
+    return newStr.substring(0, newStr.length - 2);
   }
 };
 module.exports = {
