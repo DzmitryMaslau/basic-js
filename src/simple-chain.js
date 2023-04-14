@@ -38,10 +38,10 @@ const chainMaker = {
   },
 
   finishChain() {
-    let newStr = this.arr.reduce((str, item) => str +'( ' + new String(item).toString() + ' )~~', '');
-    console.log(newStr.substring(0, newStr.length - 2));
+    let finish = this.arr.reduce((str, item) => str +'( ' + new String(item).toString() + ' )~~', '');
+    console.log(newStr.substring(0, finish.length - 2));
     this.arr = [];
-    return newStr.substring(0, newStr.length - 2);
+    return newStr.substring(0, finish.length - 2);
   }
 };
 module.exports = {
