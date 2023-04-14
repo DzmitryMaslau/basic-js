@@ -27,11 +27,11 @@ function transform(array) {
             if(i > 0) {
                 result.push(array[i - 1]);
             }
-        } else if(arr[i] === '--discard-next') {
+        } else if(array[i] === '--discard-next') {
             if(i < array.length - 1) {
                 i++;
             }
-        } else if(arr[i] === '--discard-prev') {
+        } else if(array[i] === '--discard-prev') {
             if(result.length > 0) {
                 result.pop();
             }
