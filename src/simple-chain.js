@@ -39,9 +39,9 @@ const chainMaker = {
 
   finishChain() {
     let finish = this.arr.reduce((str, item) => str +'( ' + new String(item).toString() + ' )~~', '');
-    console.log(newStr.substring(0, finish.length - 2));
+    console.log(finish.substring(0, finish.length - 2));
     this.arr = [];
-    return newStr.substring(0, finish.length - 2);
+    return finish.substring(0, finish.length - 2);
   }
 };
 module.exports = {
