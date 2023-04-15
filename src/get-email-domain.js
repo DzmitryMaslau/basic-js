@@ -12,8 +12,8 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getEmailDomain() {
  let email = "prettyandsimple@example.com";
-   let email = 'xyz@gmail.com';
-getEmailDomain = email.substring(email.indexOf('@') + 1);
+let domain = email.substring(email.indexOf('@') + 1);
+ return domain
   }
 
 module.exports = {
