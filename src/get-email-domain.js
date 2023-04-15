@@ -10,7 +10,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For the input 'prettyandsimple@example.com', the output should be 'example.com'
  *
  */
-function getEmailDomain() {
+function getEmailDomain(email) {
  let email = "prettyandsimple@example.com";
 let domain = email.substring(email.indexOf('@') + 1);
  return domain
