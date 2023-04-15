@@ -16,7 +16,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function renameFiles(names) {
-    array = []
+    const array = []
     for (let i = 0; i < names.length; i++) {
        if (!array.includes(names[i])) {
             array.push(names[i]) 
